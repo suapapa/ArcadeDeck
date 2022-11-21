@@ -287,6 +287,8 @@ void init_oled(const u8g2_cb_t *rotation) {
 	u8g2_esp32_hal_t u8g2_esp32_hal = U8G2_ESP32_HAL_DEFAULT;
 	u8g2_esp32_hal.sda = OLED_SDA_PIN;
 	u8g2_esp32_hal.scl = OLED_SCL_PIN;
+	u8g2_esp32_hal.reset = OLED_RST_PIN;
+	u8g2_esp32_hal.dc = OLED_DC_PIN;
 	u8g2_esp32_hal_init(u8g2_esp32_hal);
 
 	if((rotation == DEG90) || rotation == DEG270){

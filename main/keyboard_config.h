@@ -27,10 +27,10 @@
 
 //Define matrix
 #define KEYPADS 1 // intended in order to create a Multiple keypad split boards
-#define MATRIX_ROWS 4
-#define MATRIX_COLS 4 // For split keyboards, define columns for one side only.
+#define MATRIX_ROWS 3
+#define MATRIX_COLS 3 // For split keyboards, define columns for one side only.
 
-#define LAYERS 3 // number of layers defined
+#define LAYERS 2 // number of layers defined
 
 // Select diode direction
 #define COL2ROW
@@ -39,32 +39,34 @@
 //Encoder definitions
 #define R_ENCODER_1 // undefine if no rotary encoder is used
 //#define R_ENCODER_SLAVE // undefine if no rotary encoder is used on slave pad
-#define ENCODER1_A_PIN GPIO_NUM_26 // encoder phase A pin
-#define ENCODER1_B_PIN GPIO_NUM_25// encoder phase B pin
-#define ENCODER1_S_PIN GPIO_NUM_34// encoder switch pin
+#define ENCODER1_A_PIN GPIO_NUM_32 // encoder phase A pin
+#define ENCODER1_B_PIN GPIO_NUM_33// encoder phase B pin
+#define ENCODER1_S_PIN GPIO_NUM_35// encoder switch pin
 #define ENCODER1_S_ACTIVE_LOW 0	  // encoder switch is active_low=1 active_high=0
 
 
 #define R_ENCODER_2 // undefine if no rotary encoder is used
-#define ENCODER2_A_PIN GPIO_NUM_33// encoder phase A pin
-#define ENCODER2_B_PIN GPIO_NUM_32// encoder phase B pin
-#define ENCODER2_S_PIN GPIO_NUM_27// encoder switch pin
+#define ENCODER2_A_PIN GPIO_NUM_25// encoder phase A pin
+#define ENCODER2_B_PIN GPIO_NUM_26// encoder phase B pin
+#define ENCODER2_S_PIN GPIO_NUM_34// encoder switch pin
 #define ENCODER2_S_ACTIVE_LOW 0	  // encoder switch is active_low=1 active_high=0
 
-#define RGB_LEDS
+//#define RGB_LEDS
 
 //OLED Parameters
 #define OLED_ENABLE //undefine if no oled is used.
 #define ROTATION LANDSCAPE
 #define OLED_SDA_PIN GPIO_NUM_21
 #define OLED_SCL_PIN GPIO_NUM_22
+#define OLED_RST_PIN GPIO_NUM_5
+#define OLED_DC_PIN GPIO_NUM_23
 
 /*Battery monitoring
  * Please read check battery_monitor.h for resistor values before applying
  * use ADC1 only,  */
 
 //#define BATT_STAT //define to enable battery monitoring
-#define BATT_PIN ADC1_CHANNEL_7 //gpio pin 35, refer to the esp32 before modifying
+//#define BATT_PIN ADC1_CHANNEL_7 //gpio pin 35, refer to the esp32 before modifying
 
 //deep sleep parameters, mind that reconnecting after deep sleep might take a minute or two
 #define SLEEP_MINS 30 // undefine if you do not need deep sleep, otherwise define number of minutes for deepsleep
