@@ -28,7 +28,9 @@
 #include "oled_tasks.h"
 #include "nvs_keymaps.h"
 #include "plugin_manager.h"
+#ifdef RGB_LEDS
 #include "rgb_led.h"
+#endif
 
 #define KEY_PRESS_TAG "KEY_PRESS"
 

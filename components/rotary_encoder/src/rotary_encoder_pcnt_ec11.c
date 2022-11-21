@@ -216,11 +216,11 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
 
     if(EncoderCount > PastEncoderCount){
         EncoderState = ENC_UP;
-        //ESP_LOGI("Encoder","up");
+        ESP_LOGI("Encoder","up");
     }
     if(EncoderCount < PastEncoderCount){
         EncoderState = ENC_DOWN;
-        //ESP_LOGI("Encoder","down");
+        ESP_LOGI("Encoder","down");
     }
     if (encoder->encoder_s_pin != GPIO_NUM_NC)
     {
@@ -233,7 +233,7 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
                 {
                     encoder->fsm_state=S_BUTTON_PRESSED;
                     encoder->fsm_timer=0;
-                    //ESP_LOGI("Encoder FSM","IDLE->PRESSED");
+                    ESP_LOGI("Encoder FSM","IDLE->PRESSED");
                 }
             break;
             case S_BUTTON_PRESSED:
@@ -242,7 +242,7 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
                 {
                     encoder->fsm_state=S_BUTTON_RELEASED;
                     encoder->fsm_timer=0;
-                    //ESP_LOGI("Encoder FSM", "PRESSED->RELEASED");
+                    ESP_LOGI("Encoder FSM", "PRESSED->RELEASED");
                 }
                 else
                 {
@@ -253,8 +253,8 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
                         encoder->fsm_state=S_LONG_PRESSED;
                         encoder->fsm_timer=0;
                         EncoderState = ENC_BUT_LONG_PRESS;
-                        //ESP_LOGI("Encoder","Long Pressed");
-                        //ESP_LOGI("Encoder FSM","PRESSED->LONG_PRESSED");
+                        ESP_LOGI("Encoder","Long Pressed");
+                        ESP_LOGI("Encoder FSM","PRESSED->LONG_PRESSED");
                     }
                 }
                 
@@ -266,8 +266,8 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
                     encoder->fsm_state=S_DOUBLE_PRESSED;
                     encoder->fsm_timer=0;
                     EncoderState = ENC_BUT_DOUBLE_PRESS;
-                    //ESP_LOGI("Encoder","Double Pressed");
-                    //ESP_LOGI("Encoder FSM","RELEASE->DOUBLE_PRESS");
+                    ESP_LOGI("Encoder","Double Pressed");
+                    ESP_LOGI("Encoder FSM","RELEASE->DOUBLE_PRESS");
                 }
                 else
                 {
@@ -278,8 +278,8 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
                         encoder->fsm_state=S_IDLE;
                         encoder->fsm_timer=0;
                         EncoderState = ENC_BUT_SHORT_PRESS;
-                        //ESP_LOGI("Encoder","Pressed");
-                        //ESP_LOGI("Encoder FSM","RELEASED->IDLE");
+                        ESP_LOGI("Encoder","Pressed");
+                        ESP_LOGI("Encoder FSM","RELEASED->IDLE");
                     }
                 }
                 break;
@@ -290,7 +290,7 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
                 {
                     encoder->fsm_state=S_IDLE;
                     encoder->fsm_timer=0;
-                    //ESP_LOGI("Encoder FSM","LONG_PRESSED->IDLE");
+                    ESP_LOGI("Encoder FSM","LONG_PRESSED->IDLE");
                 }
             break;
 
@@ -300,7 +300,7 @@ encoder_state_t encoder_state(rotary_encoder_t *encoder)
                 {
                     encoder->fsm_state=S_IDLE;
                     encoder->fsm_timer=0;
-                    //ESP_LOGI("Encoder FSM","DOUBLE_PRESSED->IDLE");
+                    ESP_LOGI("Encoder FSM","DOUBLE_PRESSED->IDLE");
                 }
             break;
         }
@@ -421,7 +421,7 @@ void encoder_command(uint8_t command, uint16_t encoder_commands[ENCODER_SIZE]){
         //Review Macro actions
         else if(action >= MACRO_BASE_VAL && action < MACRO_BASE_VAL + MACROS_NUM)
         {
-            //ESP_LOGI("Encoder","Macro detected %d", action);
+            ESP_LOGI("Encoder","Macro detected %d", action);
             uint8_t i;
             for (i = 0; i < MACRO_LEN; i++) {
                 uint16_t key = macros[action - MACRO_BASE_VAL][i];
@@ -432,7 +432,7 @@ void encoder_command(uint8_t command, uint16_t encoder_commands[ENCODER_SIZE]){
                 key_state[2+i] = key;
                 modifier |= check_key_modifier(key);
            
-                //ESP_LOGI("KEY sent", "macroid: %d", key);
+                ESP_LOGI("KEY sent", "macroid: %d", key);
             }
             key_state[0] = modifier;
             xQueueSend(keyboard_q,(void*)&key_state, (TickType_t) 0);

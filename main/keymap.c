@@ -23,9 +23,7 @@ enum layer_holds {
 };
 
 // array to hold names of layouts for oled
-char default_layout_names[LAYERS][MAX_LAYOUT_NAME_LENGTH] = { "MEDIA", "NUM",
-	"Plugins",
-};
+char default_layout_names[LAYERS][MAX_LAYOUT_NAME_LENGTH] = { "MEDIA", "Plugins" };
 
 /* select a keycode for your macro
  * important - first macro must be initialized as MACRO_BASE_VAL
@@ -122,7 +120,7 @@ uint16_t default_slave_encoder_map[LAYERS][ENCODER_SIZE] = {
 // Each keymap is represented by an array, with an array that points to all the keymaps  by order
 uint16_t _MEDIA[MATRIX_ROWS][KEYMAP_COLS] = {
 	/* MEDIA */
-	{RAISE, KC_APP_TERMINAL, KC_APP_SHUTTER},
+	{LOWER, KC_APP_TERMINAL, KC_APP_SHUTTER},
 	{KC_LWIN, KC_UP, KC_ALT_TAB},
 	{KC_LEFT, KC_DOWN, KC_RIGHT}
 };

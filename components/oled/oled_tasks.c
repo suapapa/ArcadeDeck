@@ -298,7 +298,7 @@ void init_oled(const u8g2_cb_t *rotation) {
 
 	}
 
-	u8g2_Setup_ssd1306_i2c_128x64_noname_f(&u8g2, rotation,
+	u8g2_Setup_sh1106_i2c_128x64_noname_f(&u8g2, rotation,
 			u8g2_esp32_i2c_byte_cb, u8g2_esp32_gpio_and_delay_cb); // init u8g2 structure
      
 	u8x8_SetI2CAddress(&u8g2.u8x8, 0x78);
@@ -309,6 +309,7 @@ void init_oled(const u8g2_cb_t *rotation) {
 
 }
 
+
 /**
  * Made with Marlin Bitmap Converter
  * https://marlinfw.org/tools/u8glib/converter.html
@@ -316,6 +317,7 @@ void init_oled(const u8g2_cb_t *rotation) {
  * This bitmap from the file 'DeepDeck.png'
  */
 
+/*
 const unsigned char bitmap_splash[]  = {
   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
@@ -382,13 +384,14 @@ const unsigned char bitmap_splash[]  = {
   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,
   0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF,0xFF
 };
+*/
 
 void splashScreen(void)
 {
 	u8g2_ClearDisplay(&u8g2);
 	u8g2_ClearBuffer(&u8g2);
 	u8g2_SetFont(&u8g2, u8g2_font_5x7_tf);
-	// u8g2_DrawStr(&u8g2, 0, 6, "V1.1.2");
+	u8g2_DrawStr(&u8g2, 0, 6, "ArcadeDeck");
 
 	// u8g2_SetFont(&u8g2, u8g2_font_5x7_tr);
 	// u8g2_DrawStr(&u8g2, 0, 12, "V1.1.2");
@@ -406,7 +409,7 @@ void splashScreen(void)
 	// u8g2_DrawStr(&u8g2, 98, 64, "V1.1.2");
 	//u8g2_DrawCircle(&u8g2, 64, 32, 30, U8G2_DRAW_ALL);
 
-	u8g2_DrawBitmap(&u8g2,0,0,16,64,bitmap_splash);
+	// u8g2_DrawBitmap(&u8g2,0,0,16,64,bitmap_splash);
 
 	u8g2_SendBuffer(&u8g2);
 }

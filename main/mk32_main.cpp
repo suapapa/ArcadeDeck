@@ -56,7 +56,9 @@
 #include "esp_err.h"
 
 #include "rotary_encoder.h"
+#ifdef RGB_LEDS
 #include "rgb_led.h"
+#endif
 #include "menu.h"
 
 #include "plugins.h"
@@ -203,7 +205,7 @@ extern "C" void key_reports(void *pvParameters) {
 
 }
 
-
+#ifdef RGB_LEDS
 //Handling rgb LEDs
 extern "C" void rgb_leds_task(void *pvParameters) {
 	
@@ -213,6 +215,7 @@ extern "C" void rgb_leds_task(void *pvParameters) {
 		test();
 	}
 }
+#endif
 
 rotary_encoder_t *encoder_a = NULL;
 rotary_encoder_t *encoder_b = NULL;

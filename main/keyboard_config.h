@@ -42,14 +42,14 @@
 #define ENCODER1_A_PIN GPIO_NUM_32 // encoder phase A pin
 #define ENCODER1_B_PIN GPIO_NUM_33// encoder phase B pin
 #define ENCODER1_S_PIN GPIO_NUM_35// encoder switch pin
-#define ENCODER1_S_ACTIVE_LOW 0	  // encoder switch is active_low=1 active_high=0
+#define ENCODER1_S_ACTIVE_LOW 1	  // encoder switch is active_low=1 active_high=0
 
 
 #define R_ENCODER_2 // undefine if no rotary encoder is used
 #define ENCODER2_A_PIN GPIO_NUM_25// encoder phase A pin
 #define ENCODER2_B_PIN GPIO_NUM_26// encoder phase B pin
 #define ENCODER2_S_PIN GPIO_NUM_34// encoder switch pin
-#define ENCODER2_S_ACTIVE_LOW 0	  // encoder switch is active_low=1 active_high=0
+#define ENCODER2_S_ACTIVE_LOW 1	  // encoder switch is active_low=1 active_high=0
 
 //#define RGB_LEDS
 
@@ -66,7 +66,7 @@
  * use ADC1 only,  */
 
 //#define BATT_STAT //define to enable battery monitoring
-//#define BATT_PIN ADC1_CHANNEL_7 //gpio pin 35, refer to the esp32 before modifying
+#define BATT_PIN ADC1_CHANNEL_7 //gpio pin 35, refer to the esp32 before modifying
 
 //deep sleep parameters, mind that reconnecting after deep sleep might take a minute or two
 #define SLEEP_MINS 30 // undefine if you do not need deep sleep, otherwise define number of minutes for deepsleep
