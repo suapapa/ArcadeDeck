@@ -33,8 +33,8 @@
  * GPIO34-39 can only be set as input mode and do not have software pullup or pulldown functions.
  * GPIOS 0,2,4,12-15,25-27,32-39 Can be used as RTC GPIOS as well (please read about power management in ReadMe)
  */
-const gpio_num_t MATRIX_ROWS_PINS[] = { GPIO_NUM_4, GPIO_NUM_2, GPIO_NUM_15 };
-const gpio_num_t MATRIX_COLS_PINS[] = { GPIO_NUM_16, GPIO_NUM_15, GPIO_NUM_14 };
+const gpio_num_t MATRIX_ROWS_PINS[] = { GPIO_NUM_13, GPIO_NUM_12, GPIO_NUM_14 };
+const gpio_num_t MATRIX_COLS_PINS[] = { GPIO_NUM_4, GPIO_NUM_2, GPIO_NUM_15 };
 // matrix states
 uint8_t MATRIX_STATE[MATRIX_ROWS][MATRIX_COLS] = { 0 };
 uint8_t PREV_MATRIX_STATE[MATRIX_ROWS][MATRIX_COLS] = { 0 };

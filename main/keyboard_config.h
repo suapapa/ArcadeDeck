@@ -16,7 +16,7 @@
 #include "oled_tasks.h"
 
 #define MODULE_ID "ESP32"
-#define GATTS_TAG "Ahuyama" // The device's name
+#define GATTS_TAG "ArcadeDeck" // The device's name
 #define MAX_BT_DEVICENAME_LENGTH 40
 
 #define MASTER  // undefine if you are not flashing the main controller
@@ -34,7 +34,7 @@
 
 // Select diode direction
 #define COL2ROW
-//#define ROW2COL
+// #define ROW2COL
 
 //Encoder definitions
 #define R_ENCODER_1 // undefine if no rotary encoder is used
