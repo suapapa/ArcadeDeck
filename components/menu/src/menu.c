@@ -73,8 +73,6 @@ char menu_subtitles[menu_num][MENU_CHAR_NUM] =
 char menu_main_description[5][MENU_CHAR_NUM] =
 {
     "Bluetooth",
-    "LED configuration",
-    "DeepDeck Configuration",
     "Go to Sleep",
     "Exit"
 };
@@ -82,8 +80,6 @@ menu_item_t m_main_array[] =
 {
     //Descripción                 //Acción             //Siguiente menu      ó     //Función
     {menu_main_description[0],    MA_MENU,                BLUETOOTH_MENU,             0},
-    {menu_main_description[1],    MA_FUNCTION,            NONE,                       &splashScreen},
-    {menu_main_description[2],    MA_FUNCTION,            NONE,                       &splashScreen},
     {menu_main_description[3],    MA_FUNCTION,            NONE,                       &menu_goto_sleep},
     {menu_main_description[4],    MA_FUNCTION,            NONE,                       &menu_exit},
     {0,                           MA_END,                 0,                          0}
